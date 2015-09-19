@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Smove | App</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&amp;subset=latin" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" type="text/css">
@@ -18,10 +18,26 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head> 
-  <body>
-    
+  <body ng-cloak>
+    <topnav></topnav>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+    <script src="/libs/ui-event/ui-event.min.js"></script>
+    <script src="/libs/ui-map/ui-map.min.js"></script>
+
+    <script src="/js/app.core.js"></script>
+
+    <!-- layout -->
+    <script src="/js/layouts/topnav.directive.js"></script>
+    <!-- / layout -->
+
+    <!-- app -->
+    <script src="/js/app.module.js"></script>
+    <script src="/js/app.config.js"></script>
+    <!-- /app -->
+
+    <!-- must load google map at the end of page -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=onMapReady"></script>
   </body>
 </html>

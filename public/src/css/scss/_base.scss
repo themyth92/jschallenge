@@ -1,6 +1,6 @@
 body {
   font-family: $font-stack;
-  background-color: $nav-bg;
+  background-color: $body-bg;
   font-size: 13px;
   color: $text-color;
   overflow-x: hidden;
@@ -8,4 +8,71 @@ body {
 
 html,body {
   height: 100%;
+}
+
+a {
+  cursor: pointer;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+//----------- TEXT 
+.text-navy {
+  color: $navy;
+}
+
+.text-primary {
+  color: inherit;
+}
+
+.text-success {
+  color: $blue;
+}
+
+.text-info {
+  color: $lazur;
+}
+
+.text-warning {
+  color: $yellow;
+}
+
+.text-danger {
+  color: $red;
+}
+
+.text-muted {
+  color: #888888;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+//------------- Drop down
+.dropdown-menu {
+  border: medium none;
+  border-radius: 3px;
+  box-shadow: 0 0 3px rgba(86, 96, 117, 0.7);
+  display: none;
+  float: left;
+  font-size: 12px;
+  left: 0;
+  list-style: none outside none;
+  padding: 0;
+  position: absolute;
+  text-shadow: none;
+  top: 100%;
+  z-index: 1000;
+
+  > li > a {
+    border-radius: 3px;
+    color: inherit;
+    line-height: 25px;
+    margin: 4px;
+    text-align: left;
+    font-weight: normal;
+  }
 }

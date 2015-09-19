@@ -1,5 +1,5 @@
 // Font
-$font-stack: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-stack: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // Basic Colors
 $navy: #1ab394;           // Primary color
@@ -8,23 +8,38 @@ $blue: #1c84c6;           // Success color
 $lazur: #23c6c8;          // Info color
 $yellow: #f8ac59;         // Warrning color
 $red: #ed5565;            // Danger color
-
-// Various colors
-$text-color: #676a6c;           // Body text
-$gray: #f3f3f4;                 // Background wrapper color
-$light-gray: #d1dade;           // Default label, badget
-$label-badget-color: #5e5e5e;
 $light-blue: #f3f6fb;
+$light-gray: #d1dade;
+$text-color: #676a6c; 
+$gray: #f3f3f4; 
+$body-bg: #ffffff;
+$border-color: #e7eaec;
 
 // Spiner color and margin
-$spin-color: $navy;
-$spin-margin: 0 auto;
+//$spin-color: $navy;
+//$spin-margin: 0 auto;
 
 // IBOX colors ( default panel colors)
-$border-color: #e7eaec;   // IBox border
-$ibox-title-bg: white;    // IBox Background header
-$ibox-content-bg: white;  // IBox Background content
+   // IBox border
+//$ibox-title-bg: white;    // IBox Background header
+//$ibox-content-bg: white;  // IBox Background content
 
 //Border radius for buttons
 $btn-border-radius: 3px;
-$nav-bg: #2f4050;
+
+//media 
+$screen-xs:                  480px;
+$screen-xs-min:              $screen-xs;
+$screen-phone:               $screen-xs-min;
+$screen-sm:                  768px;
+$screen-sm-min:              $screen-sm;
+$screen-tablet:              $screen-sm-min;
+$screen-md:                  992px;
+$screen-md-min:              $screen-md;
+$screen-desktop:             $screen-md-min;
+$screen-lg:                  1200px;
+$screen-lg-min:              $screen-lg;
+$screen-lg-desktop:          $screen-lg-min;
+$screen-xs-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);
