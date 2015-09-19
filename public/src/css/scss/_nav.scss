@@ -2,9 +2,10 @@
   border:0;
 }
 
-.navbar-fixed-top {
+.navbar-static-top {
   background:$gray;
-  
+  margin-bottom:0px;
+
   .navbar-header {
     a {
       color:$text-color;

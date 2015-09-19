@@ -18,8 +18,32 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head> 
-  <body ng-cloak>
-    <topnav></topnav>
+  <body>
+    <div class="window-loading-wrapper" ng-if="loaded">
+      <div class="sk-fading-circle">
+        <div class="sk-circle1 sk-circle"></div>
+        <div class="sk-circle2 sk-circle"></div>
+        <div class="sk-circle3 sk-circle"></div>
+        <div class="sk-circle4 sk-circle"></div>
+        <div class="sk-circle5 sk-circle"></div>
+        <div class="sk-circle6 sk-circle"></div>
+        <div class="sk-circle7 sk-circle"></div>
+        <div class="sk-circle8 sk-circle"></div>
+        <div class="sk-circle9 sk-circle"></div>
+        <div class="sk-circle10 sk-circle"></div>
+        <div class="sk-circle11 sk-circle"></div>
+        <div class="sk-circle12 sk-circle"></div>
+      </div>
+    </div>
+    <div ng-cloak class="page-wrapper">
+      <topnav></topnav>
+      <div class="content-wrapper">
+        <page-switcher>
+          <div ui-view></div>
+        </page-switcher> 
+      </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
@@ -28,10 +52,24 @@
 
     <script src="/js/app.core.js"></script>
 
+    <!-- components -->
+    <script src="/js/components/spinner.directive.js"></script>
+    <!-- / components -->
+
     <!-- layout -->
     <script src="/js/layouts/topnav.directive.js"></script>
+    <script src="/js/layouts/pageSwitcher.directive.js"></script>
     <!-- / layout -->
 
+    <!-- pages -->
+    <script src="/js/pages/base/base.module.js"></script>
+    <script src="/js/pages/base/base.config.js"></script>
+    <script src="/js/pages/carParks/carParks.module.js"></script>
+    <script src="/js/pages/carParks/carParks.config.js"></script>
+    <script src="/js/pages/carParks/carParks.controller.js"></script>
+    <script src="/js/pages/carParks/mapResize.directive.js"></script>
+    <!-- /pages -->
+    
     <!-- app -->
     <script src="/js/app.module.js"></script>
     <script src="/js/app.config.js"></script>

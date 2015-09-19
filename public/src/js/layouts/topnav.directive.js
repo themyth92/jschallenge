@@ -6,7 +6,8 @@
   function topnav() {
     var directive = {
       restrict : 'E',
-      templateUrl : '/js/layouts/topnav.tpl.html'
+      templateUrl : '/js/layouts/topnav.tpl.html',
+      replace : true
     };
 
     return directive;

@@ -76,3 +76,22 @@ a:hover, a:focus {
     font-weight: normal;
   }
 }
+
+//app load
+.window-loading-wrapper {
+  width:100%;
+  height:100%;
+}
+
+.window-loading-wrapper {
+  @include vertical-align-parent;
+  >.sk-fading-circle {
+    @include vertical-align-child;
+  }
+}
+
+.page-switcher-wrapper {
+  >.sk-fading-circle {
+    margin: 5px 0 0 5px;
+  } 
+}
