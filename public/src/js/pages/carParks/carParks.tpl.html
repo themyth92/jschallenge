@@ -1,3 +1,8 @@
-<div class="map-wrapper">
-  <div ui-map="myMap" ui-options="mapOptions" class="map-canvas" map-resize></div>
+<div class="page-carpark">
+  <div class="map-wrapper">
+    <ui-gmap-google-map class="map-canvas" center="CarParksController.data.map.center" zoom="CarParksController.data.map.zoom" map-adjust>
+      <ui-gmap-markers coords="'self'" models="CarParksController.data.markerArr" fit="'true'" icon="'maps.google.com/mapfiles/marker.png'" click="CarParksController.selectCarPark"></ui-gmap-markers>
+    </ui-gmap-google-map>
+  </div>
+  <car-park-details></car-park-details>
 </div>

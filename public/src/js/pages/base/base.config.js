@@ -9,17 +9,15 @@
       abstract : true,
       template: '<ui-view/>',
       resolve : {
-        baseRouteResolve : baseRouteResolve
+        baseRouteResolver : baseRouteResolver
       }
     });
   }
 
-  function baseRouteResolve($timeout) {
-    return $timeout(function() {
-      return;
-    }, 1000);
+  function baseRouteResolver(routeResolver) {
+    return routeResolver.baseRoute();
   }
 
   config.$inject = ['$stateProvider'];
-  baseRouteResolve.$inject = ['$timeout'];
+  baseRouteResolver.$inject = ['routeResolver'];
 })(angular);

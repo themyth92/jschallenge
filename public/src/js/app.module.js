@@ -9,14 +9,24 @@
     // layouts
     'layouts.topnav',
     'layouts.pageSwitcher',
+    'layouts.pageWrapperAdjust',
 
     // pages
     'pages.base',
     'pages.carParks'
-  ]);
-})(angular); 
+  ])
+    .config(config);
 
-// expose this function to global scope due to google map callback
-function onMapReady() {
-  angular.bootstrap(document, ['app'], {strictDi : true});
-}
+  function config(uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+      v: '3.20'
+    });
+  }
+
+  config.$inject = ['uiGmapGoogleMapApiProvider'];
+
+  // create nice loading effect although it is not neccessary
+  setTimeout(function setTimeout() {
+    angular.bootstrap(document, ['app'], {strictDi : true});
+  }, 1000);
+})(angular); 

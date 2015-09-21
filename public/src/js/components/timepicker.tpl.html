@@ -1,0 +1,17 @@
+<table>
+  <tbody>
+    <tr class="text-center" ng-show="::showSpinners">
+      <td><a ng-click="incrementHours()" ng-class="{disabled: noIncrementHours()}" class="btn btn-link"><span class="glyphicon glyphicon-chevron-up"></span></a></td>
+    </tr>
+    <tr>
+      <td class="form-group" ng-class="{'has-error': invalidHours}">
+        <input style="width:50px;" type="text" ng-model="hours" ng-change="updateHours()" class="form-control text-center" ng-readonly="::readonlyInput" maxlength="2">
+      </td>
+      <td ng-show="showMeridian" style="padding-left:5px;"><button type="button" ng-class="{disabled: noToggleMeridian()}" class="btn btn-primary text-center" ng-click="toggleMeridian()">{{meridian}}</button></td>
+    </tr>
+    <tr class="text-center" ng-show="::showSpinners">
+      <td><a ng-click="decrementHours()" ng-class="{disabled: noDecrementHours()}" class="btn btn-link"><span class="glyphicon glyphicon-chevron-down"></span></a></td>
+      <td ng-show="showMeridian"></td>
+    </tr>
+  </tbody>
+</table>

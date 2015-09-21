@@ -1,9 +1,9 @@
 (function wrapper(angular) {
   'use strict';
   angular.module('pages.carParks')
-    .directive('mapResize', mapResize);
+    .directive('mapAdjust', mapAdjust);
 
-  function mapResize($document, $window) {
+  function mapAdjust($document, $window) {
 
     // map adjustment based on window size
     var directive = {
@@ -16,7 +16,7 @@
     //----------------------
     function link(scope, elem) {
       var body = $document[0].body;
-      var mapCanvas = elem;
+      var mapContainer = angular.element(elem[0].querySelector('.angular-google-map-container'));
       var window = angular.element($window);
       var topnav = angular.element(body.querySelector('.navbar'))[0];
 
@@ -33,9 +33,9 @@
       function mapResize() {
         var bodyHeight = body.offsetHeight;
         var topnavHeight = topnav.offsetHeight;
-        var mapCanvasHeight = bodyHeight - topnavHeight;
+        var mapContainerHeight = bodyHeight - topnavHeight - 1; //due to border-bottom on topnav
 
-        mapCanvas.css('height', mapCanvasHeight + 'px');
+        mapContainer.css('height', mapContainerHeight + 'px');
       }
 
       function onDestroy() {
@@ -44,5 +44,5 @@
     }
   }
 
-  mapResize.$inject = ['$document', '$window'];
+  mapAdjust.$inject = ['$document', '$window'];
 })(angular);

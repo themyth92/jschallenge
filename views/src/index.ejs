@@ -35,7 +35,7 @@
         <div class="sk-circle12 sk-circle"></div>
       </div>
     </div>
-    <div ng-cloak class="page-wrapper">
+    <div ng-cloak class="page-wrapper gray-bg" page-wrapper-adjust>
       <topnav></topnav>
       <div class="content-wrapper">
         <page-switcher>
@@ -44,21 +44,30 @@
       </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
-    <script src="/libs/ui-event/ui-event.min.js"></script>
-    <script src="/libs/ui-map/ui-map.min.js"></script>
+    <script src="/libs/angular-simple-logger/angular-simple-logger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.2.1/angular-google-maps.min.js"></script>
 
     <script src="/js/app.core.js"></script>
 
     <!-- components -->
     <script src="/js/components/spinner.directive.js"></script>
+    <script src="/js/components/readmore.directive.js"></script>
     <!-- / components -->
+
+    <!-- services -->
+    <script src="/js/services/appData.service.js"></script>
+    <script src="/js/services/routeResolver.service.js"></script>
+    <script src="/js/services/map.service.js"></script>
+    <!-- / services -->
 
     <!-- layout -->
     <script src="/js/layouts/topnav.directive.js"></script>
     <script src="/js/layouts/pageSwitcher.directive.js"></script>
+    <script src="/js/layouts/pageWrapperAdjust.directive.js"></script>
     <!-- / layout -->
 
     <!-- pages -->
@@ -67,15 +76,13 @@
     <script src="/js/pages/carParks/carParks.module.js"></script>
     <script src="/js/pages/carParks/carParks.config.js"></script>
     <script src="/js/pages/carParks/carParks.controller.js"></script>
-    <script src="/js/pages/carParks/mapResize.directive.js"></script>
+    <script src="/js/pages/carParks/mapAdjust.directive.js"></script>
+    <script src="/js/pages/carParks/carParkDetails.directive.js"></script>
     <!-- /pages -->
     
     <!-- app -->
     <script src="/js/app.module.js"></script>
     <script src="/js/app.config.js"></script>
     <!-- /app -->
-
-    <!-- must load google map at the end of page -->
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=onMapReady"></script>
   </body>
 </html>

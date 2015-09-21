@@ -1,0 +1,10 @@
+<span ng-if="text.length > limit">
+  <span ng-hide="fullText"><span ng-bind="text | limitTo:limit"></span>...
+    <a ng-click="toggle()" ng-bind="::moreText"></a>
+  </span>
+  <span ng-show="fullText"><span ng-bind="text"></span>
+    <a ng-click="toggle()"><u ng-bind="::lessText"></u></a>
+  </span>
+</span>
+<span ng-if="text.length <= limit" ng-bind="::text">
+</span>
