@@ -5,7 +5,10 @@
 
     'services.appData',
     'services.map',
+    'services.util',
 
-    'components.readmore'
+    'components.readmore',
+    'components.bookingTimer',
+    'components.carParkRemoveModal'
   ]);
 })(angular);

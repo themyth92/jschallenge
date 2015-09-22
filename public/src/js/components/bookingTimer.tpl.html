@@ -1,0 +1,24 @@
+<div class="timepicker">
+
+  <!-- time picker -->
+  <fieldset  class="pull-left" ng-disabled="disabled">
+    <timepicker ng-change="changeBookingStart()" ng-model="booking.startDate" template-url="/js/components/timepicker.tpl.html"></timepicker>
+  </fieldset>
+  <span class="to pull-left">To</span>
+  <fieldset class="pull-left" ng-disabled="disabled">
+    <timepicker ng-change="changeBookingEnd()" class="pull-left" ng-model="booking.endDate" template-url="/js/components/timepicker.tpl.html"></timepicker>
+  </fieldset>
+  <!-- timepicker -->
+  <div class="clearfix"></div>
+  <hr>
+  <!-- price -->
+  <div class="row total">
+    <div class="col-md-3"><h3><strong>Total:</strong></h3></div>
+    <div class="col-md-9">
+      <h2 class="pull-right">
+        <span ng-bind="booking.price"></span>&nbsp;SGD
+      </h2>
+    </div>
+  </div>
+  <!-- price -->
+</div>

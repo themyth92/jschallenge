@@ -14,18 +14,11 @@
     
     //----------------------------
     function baseRoute() {
-      
-      // next date
-      var tomorrow = new Date();
-      tomorrow.setDate(tomorrow.getDate() + 1);
-
-      // Query for 24 hours next date
-      var start = tomorrow.getTime();
-      var end = start + 24*3600*1000;
-      var url = 'https://jschallenge.smove.sg/provider/1/availability?book_start=' + start + '&book_end=' + end;
-
       return $http
-        .get(url)
+
+        // call localhost. From there it will call your api
+        // There is some problem with your response CORS header so I need to call it this way
+        .get('/api/v1/carparks')
         .success(function then(carParkArr) {
           appData.processCarParkArr(carParkArr);
           return;

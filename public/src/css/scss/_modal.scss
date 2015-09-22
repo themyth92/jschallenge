@@ -1,0 +1,22 @@
+.modal-header{
+  padding: 30px 15px;
+}
+
+.modal-title {
+  font-size: 26px;
+}
+
+.modal-content {
+  background-clip: padding-box;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  outline: 0 none;
+  position: relative;
+}
+
+.modal-body {
+  padding: 20px 30px 30px 30px;
+  background-color: #f8fafb;
+}

@@ -1,46 +1,80 @@
-<div class="car-park-details-wrapper" ng-if="view.carParkSelect">
+<div class="car-park-details-wrapper" ng-if="view.showPanel">
   <div class="panel">
-    <div class="panel-title text-center" ng-class="{unavailable : model.cars_available == 0}">
+
+    <!-- title -->
+    <div class="panel-title text-center" ng-class="{unavailable : view.showBookingPanel && model.cars_available == 0}">
+
+      <!-- close -->
       <div class="panel-tools">
         <a class="close" ng-click="close()"><i class="fa fa-times"></i></a>
       </div>
+      <!-- / close -->
+
+      <!-- parking title -->
       <h1 ng-bind="model.parking_shortname"></h1>
-      <small><i><span ng-class="{'text-navy' : model.cars_available > 0, 'text-danger' : model.cars_available == 0}"><span ng-bind="model.cars_available"></span> cars available</span> on <span ng-bind="data.tomorrow | date : 'EEE, MMM d, y'"></span></i></small>
+      <!-- / parking title -->
+
+      <!-- parking status -->
+      <small><i>
+        <span ng-class="{'text-navy' : model.cars_available > 0, 'text-danger' : model.cars_available == 0}">
+          <span ng-bind="model.cars_available"></span> cars available
+        </span> on 
+        <span ng-bind="data.tomorrow | date : 'EEE, MMM d, y'"></span>
+      </i></small>
+      <!-- / parking status -->
+
     </div>
+    <!-- / title -->
+
     <hr class="star">
+
+    <!-- content -->
     <div class="panel-content text-left">
+
+      <!-- desc -->
       <div>
         <h3><span class="fa fa-map"></span>&nbsp;&nbsp;How to get there</h3>
         <p class="text-muted"><readmore text="{{model.description}}"></readmore></p>
       </div>
+      <!-- / desc -->
+
       <hr>
-      <div ng-if="model.booking.from !== null && model.booking.to !== null">
-        <h3><span class="fa fa-calendar-check"></span>&nbsp;&nbsp;Your booking</h3>
-        <p>3pm to 8pm<span>&nbsp;&nbsp;</span><span a href><u><i>Change</i></u></span></p>
-      </div>
-      <div ng-if="model.booking.from === null && model.booking.to === null">
-        <h3><span class="fa fa-bookmark"></span>&nbsp;&nbsp;Book this place</h3>
-        <button ng-if="!view.startBook" class="btn btn-primary btn-outline" ng-click="startBook()">Book</button>
-        <div ng-if="view.startBook">
-          <div class="timepicker clearfix">
-            <fieldset ng-disabled="view.isSubmitting" class="pull-left">
-              <timepicker ng-change="changeBookingFrom()" ng-model="data.booking.from" template-url="/js/components/timepicker.tpl.html"></timepicker></fieldset>
-            <span class="to pull-left">To</span>
-            <fieldset class="pull-left" ng-disabled="view.isSubmitting">
-              <timepicker ng-change="changeBookingTo()" class="pull-left" ng-model="data.booking.to" template-url="/js/components/timepicker.tpl.html"></timepicker>
-            </fieldset>
-          </div>
-          <hr>
-          <div class="row total">
-            <div class="col-md-3"><h3><strong>Total:</strong></h3></div>
-            <div class="col-md-9"><h2 class="pull-right"><span ng-bind="data.booking.price"></span>&nbsp;SGD</h2></div>
-          </div>
-          <p>
-            <button class="btn btn-primary" ng-disabled="view.isSubmitting" ng-click="confirmBook()">Confirm</button>
-            <button class="btn btn-default" ng-disabled="view.isSubmitting" ng-click="stopBook()">Cancel</button>
-          </p>
+
+      <!-- your booking panel -->
+      <div ng-if="!view.showBookingPanel">
+        <h3><span class="fa fa-calendar"></span>&nbsp;&nbsp;Your booking</h3>
+        <div ng-if="!view.showBookingTimer">
+          <strong><span ng-bind="model.booking.startDate | date: 'h a'"></span></strong>&nbsp;&nbsp;To&nbsp;&nbsp;
+          <strong><span ng-bind="model.booking.endDate | date: 'h a'"></span></strong>
+          <span>&nbsp;&nbsp;</span>
+          <span ng-click="openBookingTimer()" style="cursor:pointer;"><u><i>Change</i></u></span>
         </div>
       </div>
+      <!-- / your booking panel -->
+
+      <!-- booking panel -->
+      <div ng-if="view.showBookingPanel">
+        <h3><span class="fa fa-bookmark"></span>&nbsp;&nbsp;Book this place</h3>
+        <button ng-if="!view.showBookingTimer && model.cars_available > 0" class="btn btn-primary btn-outline" ng-click="openBookingTimer()">Book</button>
+        
+        <!-- excuse msg -->
+        <span ng-if="model.cars_available == 0"><i>Sorry. No cars available at the moment<i></span>
+        <!-- / excuse msg -->
+      </div>
+      <!-- / booking panel -->
+
+      <!-- booking timer -->
+      <booking-timer ng-if="view.showBookingTimer" booking="data.booking" price="{{model.pricePerHour}}" disabled="view.isBookingSubmit"></booking-timer>
+      <!-- / booking timer -->
+
+      <!-- action block -->
+      <div ng-if="view.showBookingTimer">
+        <button class="btn btn-primary" ng-disabled="view.isBookingSubmit" ng-click="confirm()">Confirm</button>
+        <button class="btn btn-default" ng-disabled="view.isBookingSubmit" ng-click="cancel()">Cancel</button>
+        <button ng-if="!view.showBookingPanel" class="btn btn-danger pull-right" ng-disabled="view.isBookingSubmit" ng-click="remove()">Remove</button>
+      </div>
+      <!-- / action block -->
     </div>
   </div>
+  <!-- / content -->
 </div>

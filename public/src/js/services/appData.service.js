@@ -19,7 +19,7 @@
 
       // add booking object to store which hours user has booked this car park
       _.map(carParkArr, function map(carPark) {
-        carPark.booking = {from : null, to : null};
+        carPark.booking = {startDate : null, endDate : null};
 
         // add default price for each hour
         carPark.pricePerHour = 10; // default 10SGD / hour
