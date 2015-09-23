@@ -50,8 +50,8 @@ app.get('/api/v1/carparks', function get(request, response) {
   https.get(url, function get(res) {
     var chunk = '';
 
-    res.on('data', function data(data) {
-      chunk += data;
+    res.on('data', function data(serverData) {
+      chunk += serverData;
     });
 
     res.on('end', function end() {

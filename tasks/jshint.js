@@ -1,14 +1,10 @@
+'use strict';
 module.exports = function jshint() {
-  'use strict';
   return {
     all : ['Gruntfile.js', 
-           'components/**/*.js', 
-           'controllers/**/*.js', 
-           'config/**/*.js',
-           'middlewares/**/*.js',
-           'models/**/*.js',
-           'tests/**/*.js',
-           'public/src/js/**/*.js'],
+           'app.js',
+           'public/src/js/**/*.js',
+           'public/test/**/*js'],
     options : {
       '-W027' : true,
       '-W043' : true,
@@ -26,9 +22,12 @@ module.exports = function jshint() {
         __dirname : true,
         jasmine : true,
         xdescribe : true,
-        jQuery : true,
         window : true,
-        document : true
+        document : true,
+        console : true,
+        TestHelper : true,
+        _ : true,
+        inject : true
       }
     }
   }

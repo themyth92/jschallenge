@@ -16,6 +16,7 @@
         disabled : '=',
         price : '@'
       },
+
       restrict : 'E',
       replace : true
     };

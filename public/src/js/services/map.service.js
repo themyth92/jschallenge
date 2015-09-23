@@ -30,7 +30,7 @@
     function buildMap() {
 
       // some random place in US
-      return {center : {latitude : 45, longitude : -73}, zoom : 16}
+      return {center : {latitude : 45, longitude : -73}, zoom : 16};
     }
   }
 })(angular, _);
