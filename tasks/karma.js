@@ -54,6 +54,10 @@ module.exports = function karma() {
         'app.module.js',
         'app.config.js',
 
+        // mock
+        {pattern : '../../test/mock/*.mock.js', watched : false, included : true},
+
+        // test
         {pattern : '../../test/**/*.spec.js', watched : false, included : true}
       ],
 

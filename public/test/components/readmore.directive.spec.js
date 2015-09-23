@@ -1,3 +1,4 @@
+'use strict';
 describe('[ Unit components/readmore ]', function desc() {
   var scope;
   var isolateScope;
