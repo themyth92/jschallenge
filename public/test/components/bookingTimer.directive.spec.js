@@ -15,7 +15,7 @@ describe('[ Unit components/bookingTimer.directive ]', function desc() {
       startDate : TestHelper.createNewDate(),
       endDate : TestHelper.createNewDate(),
       price : 0
-    },
+    }
   };
 
   beforeEach(function beforeEach() {

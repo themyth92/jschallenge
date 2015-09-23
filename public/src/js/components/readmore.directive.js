@@ -26,9 +26,10 @@
       scope.lessText = lessText;
 
       // default beginning text always be trimmed
-      scope.fullText= false;
+      scope.fullText = false;
       scope.toggle = toggle;
 
+      //--------------------
       function toggle() {
         scope.fullText = !scope.fullText;
       }

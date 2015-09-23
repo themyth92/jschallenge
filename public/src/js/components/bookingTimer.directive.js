@@ -28,6 +28,7 @@
       scope.changeBookingStart = changeBookingStart;
       scope.changeBookingEnd = changeBookingEnd;
 
+      //------------------------
       function changeBookingStart() {
         var startDate = scope.booking.startDate;
         var endDate = scope.booking.endDate;
