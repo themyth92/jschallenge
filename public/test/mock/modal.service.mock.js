@@ -40,7 +40,7 @@
       result: {
         then: jasmine.createSpy('result.then')
       }
-    }
+    };
 
     return service;
   }
