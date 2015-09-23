@@ -27,7 +27,8 @@ module.exports = function jshint() {
         console : true,
         TestHelper : true,
         _ : true,
-        inject : true
+        inject : true,
+        spyOn : true
       }
     }
   }

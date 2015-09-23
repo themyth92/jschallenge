@@ -31,8 +31,10 @@ describe('[ Unit components/bookingTimer.directive ]', function desc() {
 
     // original scope data
     _.extend(scope, scopeData);
-    element = $compile('<booking-timer booking="booking" disabled="disabled" price="{{price}}"></booking-timer>')(scope);
-    scope.$digest();
+    scope.$apply(function apply() {
+      element = $compile('<booking-timer booking="booking" disabled="disabled" price="{{price}}"></booking-timer>')(scope);  
+    });
+    
     isolateScope = element.isolateScope();
   }));
 

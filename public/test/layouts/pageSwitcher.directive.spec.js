@@ -15,8 +15,10 @@ describe('[ Unit layouts/pageSwitcher.directive ]', function desc() {
 
     $rootScope = _$rootScope_;
     scope = $rootScope.$new();
-    element = $compile('<page-switcher></page-switcher>')(scope);
-    scope.$digest();
+    scope.$apply(function apply() {
+      element = $compile('<page-switcher></page-switcher>')(scope);  
+    });
+    
     isolateScope = element.isolateScope();
   }));
 

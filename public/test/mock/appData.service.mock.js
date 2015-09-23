@@ -5,7 +5,8 @@
   function appData() {
     var service = {
       processCarParkArr : jasmine.createSpy('service.processCarParkArr'),
-      findCarPark : jasmine.createSpy('service.findCarPark')
+      findCarPark : jasmine.createSpy('service.findCarPark'),
+      model : []
     };
 
     return service;

@@ -15,8 +15,10 @@ describe('[ Unit components/readmore ]', function desc() {
 
     $compile = _$compile_;
     scope = $rootScope.$new();
-    element = $compile('<readmore></readmore>')(scope);
-    scope.$digest();
+    scope.$apply(function apply() {
+      element = $compile('<readmore></readmore>')(scope);
+    });
+    
     isolateScope = element.isolateScope();
   }));
 
