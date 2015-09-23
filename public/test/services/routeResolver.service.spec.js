@@ -1,7 +1,7 @@
 'use strict';
 describe('[ Unit services/routeResolver.service ]', function desc() {
-  var routeResolver;
   var $httpBackend;
+  var routeResolver;
   var appData;
 
   // mock data

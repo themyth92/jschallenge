@@ -1,9 +1,9 @@
 'use strict';
 describe('[ Unit components/readmore ]', function desc() {
+  var $compile;
   var scope;
   var isolateScope;
   var element;
-  var $compile;
 
   beforeEach(function beforeEach() {
     module('test.template');

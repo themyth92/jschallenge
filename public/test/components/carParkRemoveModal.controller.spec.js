@@ -1,28 +1,22 @@
 'use strict';
 describe('[ Unit components/carParRemoveModal.controller ]', function desc() {
+  var $timeout;
   var scope;
   var vm;
   var modalInstance;
-  var $timeout;
 
   beforeEach(function beforeEach() {
     module('test.template');
     module('components.carParkRemoveModal');
+    module('mock.services.modal');
   });
 
-  beforeEach(inject(function inject(_$rootScope_, _$controller_, _$timeout_) {
+  beforeEach(inject(function inject(_$rootScope_, _$controller_, _$timeout_, _$modalInstance_) {
     var $rootScope = _$rootScope_;
     var $controller = _$controller_;
 
     $timeout = _$timeout_;
-    modalInstance = {
-      close: jasmine.createSpy('modalInstance.close'),
-      dismiss: jasmine.createSpy('modalInstance.dismiss'),
-      result: {
-        then: jasmine.createSpy('modalInstance.result.then')
-      }
-    };
-
+    modalInstance = _$modalInstance_;
     scope = $rootScope.$new();
     $controller('CarParkRemoveModalController as CarParkRemoveModalController', 
                 {$scope : scope, $modalInstance : modalInstance});

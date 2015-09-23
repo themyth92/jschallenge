@@ -1,8 +1,8 @@
 'use strict';
 describe('[ Unit layouts/pageSwitcher.directive ]', function desc() {
+  var $rootScope;
   var scope;
   var element;
-  var $rootScope;
   var isolateScope;
 
   beforeEach(function beforeEach() {

@@ -34,6 +34,14 @@
   }
 
   function modalInstance() {
+    var service = {
+      close: jasmine.createSpy('close'),
+      dismiss: jasmine.createSpy('dismiss'),
+      result: {
+        then: jasmine.createSpy('result.then')
+      }
+    }
 
+    return service;
   }
 })(angular);
