@@ -3,15 +3,24 @@
   angular.module('components.carParkRemoveModal', [])
     .controller('CarParkRemoveModalController', CarParkRemoveModalController);
 
-  function CarParkRemoveModalController($modalInstance) {
+  function CarParkRemoveModalController($modalInstance, $timeout) {
     var vm = this;
 
-    this.confirm = confirm;
-    this.cancel = cancel;
+    vm.confirm = confirm;
+    vm.cancel = cancel;
+    vm.view = {
+      disabled : false
+    };
 
     //----------------------
     function confirm() {
-      $modalInstance.close();
+      vm.view.disabled = true;
+
+      // create fake ajax request
+      return $timeout(function timeout() {
+        vm.view.disabled = false;
+        $modalInstance.close();
+      }, 1000);
     }
 
     function cancel() {
@@ -19,5 +28,5 @@
     }
   }
 
-  CarParkRemoveModalController.$inject = ['$modalInstance'];
+  CarParkRemoveModalController.$inject = ['$modalInstance', '$timeout'];
 })(angular);

@@ -107,7 +107,17 @@
             // update model
             scope.model.booking.startDate = util.toISOString(startDate);
             scope.model.booking.endDate = util.toISOString(endDate);
-            scope.model.cars_available -= 1;
+
+            // if user change startDate and endDate, 
+            // we should not update cars_available
+            // 
+            // if originally user from showBookingPanel view that means user 
+            // has just booked this car park firsttime
+            // If they just changed the startDate and endDate, {scope.view.showBookingPanel} should
+            // be set to false already
+            if(scope.view.showBookingPanel) {
+              scope.model.cars_available -= 1;  
+            }
 
             // hide booking panel view
             scope.view.showBookingPanel = false;

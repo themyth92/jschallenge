@@ -56,9 +56,9 @@ app.get('/api/v1/carparks', function get(request, response) {
 
     res.on('end', function end() {
       var json = JSON.parse(chunk);
-      json.map(function(carPark) {
+      /*json.map(function(carPark) {
         carPark.cars_available = 1;
-      })
+      })*/
       response.status(200).json(json);
     });
   }).on('error', function on(err) {
