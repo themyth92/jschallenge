@@ -23,6 +23,9 @@
 
         // add default price for each hour
         carPark.pricePerHour = 10; // default 10SGD / hour
+
+        // convert cars_available from string to int
+        carPark.cars_available = _.parseInt(carPark.cars_available);
       });
 
       // currently I already trust server data

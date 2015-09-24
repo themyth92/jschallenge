@@ -33,10 +33,10 @@ describe('[ Unit services/appData ]', function desc() {
     expect(appData.model).toEqual([]);
   });
 
-  it('should added default attributes to model object when method `processCarParkArr` is executed', function test() {
+  it('should added default attributes and convert cars_available datatype to model object when method `processCarParkArr` is executed', function test() {
     var expectedData = [{
       id : '1',
-      cars_available : '1',
+      cars_available : 1,
       parking_shortname : 'Shortname 1',
       description : 'Desc 1',
       latitude : '0',
@@ -48,7 +48,7 @@ describe('[ Unit services/appData ]', function desc() {
       pricePerHour : 10
     }, {
       id : '2',
-      cars_available : '1',
+      cars_available : 1,
       parking_shortname : 'Shortname 2',
       description : 'Desc 2',
       latitude : '0',
@@ -69,7 +69,7 @@ describe('[ Unit services/appData ]', function desc() {
     var carPark;
     var expectedData = {
       id : '2',
-      cars_available : '1',
+      cars_available : 1,
       parking_shortname : 'Shortname 2',
       description : 'Desc 2',
       latitude : '0',

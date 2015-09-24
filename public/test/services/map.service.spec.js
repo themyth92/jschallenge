@@ -8,18 +8,24 @@ describe('[ Unit services/map ]', function desc() {
     // carPark list from server
     carParkArr : [{
       id : '1',
-      cars_available : '1',
+      cars_available : 1,
       parking_shortname : 'Shortname 1',
       description : 'Desc 1',
       latitude : '0',
-      longitude : '1'
+      longitude : '1',
+      booking : {
+        startDate : null, endDate : null
+      }
     }, {
       id : '2',
-      cars_available : '1',
+      cars_available : 1,
       parking_shortname : 'Shortname 2',
       description : 'Desc 2',
       latitude : '0',
-      longitude : '1'
+      longitude : '1',
+      booking : {
+        startDate : null, endDate : null
+      }
     }]
   };
 

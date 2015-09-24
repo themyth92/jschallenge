@@ -9,7 +9,7 @@ describe('[ Unit pages/carParks.controller ]', function desc() {
   var data = {
     model : [{
       id : '1',
-      cars_available : '1',
+      cars_available : 1,
       parking_shortname : 'Shortname 1',
       description : 'Desc 1',
       latitude : '0',
@@ -21,7 +21,7 @@ describe('[ Unit pages/carParks.controller ]', function desc() {
       pricePerHour : 10
     }, {
       id : '2',
-      cars_available : '1',
+      cars_available : 1,
       parking_shortname : 'Shortname 2',
       description : 'Desc 2',
       latitude : '0',
