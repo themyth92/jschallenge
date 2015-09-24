@@ -1,6 +1,8 @@
 (function wrapper(angular) {
   'use strict';
-  angular.module('components.readmore', [])
+  angular.module('components.readmore', [
+    'app.core'
+  ])
     .directive('readmore', readmore);
 
   function readmore() {

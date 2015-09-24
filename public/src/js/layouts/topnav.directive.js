@@ -1,6 +1,8 @@
 (function wrapper(angular) {
   'use strict';
-  angular.module('layouts.topnav', [])
+  angular.module('layouts.topnav', [
+    'app.core'
+  ])
     .directive('topnav', topnav);
 
   function topnav() {

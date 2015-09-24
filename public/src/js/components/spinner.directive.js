@@ -1,6 +1,8 @@
 (function wrapper(angular) {
   'use strict';
-  angular.module('components.spinner', [])
+  angular.module('components.spinner', [
+    'app.core'
+  ])
     .directive('spinner', spinner);
 
   function spinner() {

@@ -1,6 +1,8 @@
 (function wrapper(angular) {
   'use strict';
-  angular.module('components.carParkRemoveModal', [])
+  angular.module('components.carParkRemoveModal', [
+    'app.core'
+  ])
     .controller('CarParkRemoveModalController', CarParkRemoveModalController);
 
   function CarParkRemoveModalController($modalInstance, $timeout) {
