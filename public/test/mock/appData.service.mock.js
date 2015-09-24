@@ -6,7 +6,8 @@
     var service = {
       processCarParkArr : jasmine.createSpy('service.processCarParkArr'),
       findCarPark : jasmine.createSpy('service.findCarPark'),
-      model : []
+      model : [],
+      data : {appLoaded : false}
     };
 
     return service;

@@ -52,6 +52,7 @@ describe('[ Unit services/routeResolver.service ]', function desc() {
   it('should resolve base route correctly', function test() {
     $httpBackend.expectGET('/api/v1/carparks');
     routeResolver.baseRoute().then(function then() {
+      expect(appData.data.appLoaded).toBeTruthy();
       expect(appData.processCarParkArr).toHaveBeenCalledWith(data.carParkArr);  
     });
 

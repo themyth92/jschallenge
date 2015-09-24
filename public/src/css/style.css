@@ -303,12 +303,13 @@ a:hover, a:focus {
   width: 150px;
   margin-top: 0;
   margin-bottom: 0; }
-.car-park-details-wrapper .timepicker .to {
+.car-park-details-wrapper .total h2 {
+  margin-top: 0; }
+
+.timepicker .to {
   line-height: 102px;
   padding-left: 10px;
   padding-right: 10px; }
-.car-park-details-wrapper .total h2 {
-  margin-top: 0; }
 
 hr.star {
   padding: 0;
@@ -327,6 +328,16 @@ hr.star {
     font-size: 1em;
     color: #e7eaec;
     background-color: white; }
+
+.page-booking {
+  padding: 20px 10px 40px; }
+  .page-booking .panel-title {
+    border-color: #1ab394; }
+
+.page-booking-edit .modal-dialog {
+  width: 400px; }
+.page-booking-edit .modal-footer {
+  padding: 20px 30px 30px 30px; }
 
 .panel {
   clear: both;
@@ -499,3 +510,13 @@ hr.star {
 .modal-body {
   padding: 20px 30px 30px 30px;
   background-color: #f8fafb; }
+
+.table > thead > tr > th {
+  border-bottom: 1px solid #DDDDDD;
+  vertical-align: bottom; }
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+  border-top: 1px solid #e7eaec;
+  line-height: 1.42857;
+  padding: 8px;
+  vertical-align: middle; }

@@ -58,8 +58,6 @@ describe('[ Unit pages/carParkDetails ]', function desc() {
     scope.$apply(function apply() {
       element = $compile('<car-park-details></car-park-details>')(scope);
     });
-    
-    scope.$digest();
   }));
 
   it('should be defined', function test() {

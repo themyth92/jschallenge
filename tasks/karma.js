@@ -50,6 +50,12 @@ module.exports = function karma() {
         'pages/carParks/carParks.module.js',
         {pattern : 'pages/carParks/*.js', watched : false, included : true},
 
+        'pages/bookings/bookings.module.js',
+        {pattern : 'pages/bookings/*.js', watched : false, included : true},
+
+        'pages/bookingEdit/bookingEdit.module.js',
+        {pattern : 'pages/bookingEdit/*.js', watched : false, included : true},
+
         // app
         'app.module.js',
         'app.config.js',

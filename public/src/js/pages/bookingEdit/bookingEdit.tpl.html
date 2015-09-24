@@ -1,0 +1,19 @@
+<div class="modal in page-booking-edit" style="display: block;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="BookingEditController.cancel()"><span>×</span><span class="sr-only">Close</span></button>
+        <h1 class="modal-title text-center" ng-bind="BookingEditController.model.parking_shortname"></h1>
+      </div>
+      <div class="modal-body">
+        <booking-timer booking="BookingEditController.data.booking" price="{{BookingEditController.model.pricePerHour}}" disabled="BookingEditController.view.isSubmitting"></booking-timer>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary pull-left" ng-click="BookingEditController.confirm()" ng-disabled="BookingEditController.view.isSubmitting">Confirm</button>
+        <button class="btn btn-default pull-left" ng-click="BookingEditController.cancel()" ng-disabled="BookingEditController.view.isSubmitting">Cancel</button>
+        <button class="btn btn-danger pull-right" ng-click="BookingEditController.remove()" ng-disabled="BookingEditController.view.isSubmitting">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop fade in"></div>

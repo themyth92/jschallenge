@@ -11,6 +11,9 @@
 
     // should be carpark list from server
     service.model = [];
+    service.data = {
+      appLoaded : false
+    };
 
     return service;
 
@@ -34,7 +37,7 @@
 
     function findCarPark(carParkID) {
       return _.find(service.model, function find(carPark) {
-        return carPark.id === carParkID;
+        return carPark.id.toString() === carParkID.toString();
       });
     }
   }

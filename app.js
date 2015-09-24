@@ -37,6 +37,10 @@ app.get('/', function get(req, res) {
   res.render('index');
 });
 
+app.get('/bookings', function get(req, res) {
+  res.render('index');
+});
+
 app.get('/api/v1/carparks', function get(request, response) {
   
   // next date
@@ -58,7 +62,7 @@ app.get('/api/v1/carparks', function get(request, response) {
       var json = JSON.parse(chunk);
       /*json.map(function(carPark) {
         carPark.cars_available = 1;
-      })*/
+      });*/
       response.status(200).json(json);
     });
   }).on('error', function on(err) {

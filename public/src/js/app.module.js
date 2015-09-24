@@ -13,7 +13,9 @@
 
     // pages
     'pages.base',
-    'pages.carParks'
+    'pages.carParks',
+    'pages.bookings',
+    'pages.bookingEdit'
   ])
     .config(config);
 
