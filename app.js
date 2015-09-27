@@ -60,9 +60,13 @@ app.get('/api/v1/carparks', function get(request, response) {
 
     res.on('end', function end() {
       var json = JSON.parse(chunk);
-      /*json.map(function(carPark) {
+
+      // please uncomment this when you dont have 
+      // any car parks available from your server
+      /*json.map(function map(carPark) {
         carPark.cars_available = 1;
       });*/
+
       response.status(200).json(json);
     });
   }).on('error', function on(err) {

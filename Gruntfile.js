@@ -17,7 +17,7 @@ module.exports = function gr(grunt) {
 
   grunt.registerTask('css', ['sass:src']);
   grunt.registerTask('quality', ['jshint:all']);
-  grunt.registerTask('test', ['karma:unit']);
-  grunt.registerTask('default', ['test', 'quality']);
+  grunt.registerTask('unitTest', ['karma:unit']);
+  grunt.registerTask('test', ['unitTest', 'quality']);
   grunt.registerTask('build', ['clean:build', 'sass', 'cssmin', 'copy', 'ngtemplates', 'concat', 'uglify', 'processhtml', 'htmlmin', 'clean:temp']);
 };

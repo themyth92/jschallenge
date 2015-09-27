@@ -11,7 +11,11 @@
 
     // should be carpark list from server
     service.model = [];
+
+    // temp data used through out the app
     service.data = {
+
+      // indicate whether serverData has been resolved or not when change route
       appLoaded : false
     };
 
@@ -31,7 +35,6 @@
         carPark.cars_available = _.parseInt(carPark.cars_available);
       });
 
-      // currently I already trust server data
       service.model = carParkArr;
     }
 

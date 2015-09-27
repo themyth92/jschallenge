@@ -20,9 +20,12 @@
         return $http
 
           // call localhost. From there it will call your api
-          // There is some problem with your response CORS header so I need to call it this way
+          // There is some problem with your response CORS header when calling
+          // directly from browser so I need to call it this way
           .get('/api/v1/carparks')
           .success(function then(carParkArr) {
+
+            // next time resolve, we dont need to call server again
             appData.data.appLoaded = true;
             appData.processCarParkArr(carParkArr);
             return;

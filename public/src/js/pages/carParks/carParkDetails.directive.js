@@ -64,13 +64,9 @@
             scope.model.booking.startDate = util.toISOString(startDate);
             scope.model.booking.endDate = util.toISOString(endDate);
 
-            // if user change startDate and endDate, 
-            // we should not update cars_available
-            // 
-            // if originally user from showBookingPanel view that means user 
-            // has just booked this car park firsttime
-            // If they just changed the startDate and endDate, {scope.view.showBookingPanel} should
-            // be set to false already
+            // if user wants to change startDate and endDate of already booked 
+            // carPark, we should not minus -1 cars_available
+            // This case only happends when {showBookingPanel} is set to false
             if(scope.view.showBookingPanel) {
               scope.model.cars_available -= 1;  
             }
@@ -105,6 +101,9 @@
           // remove car park booking model
           scope.model.booking.startDate = null;
           scope.model.booking.endDate = null;
+
+          // must add +1 to cars_available when this booking carpark 
+          // has been removed from user account
           scope.model.cars_available += 1;
           refreshControllerTempData();
           refreshControllerView();
@@ -112,6 +111,9 @@
       }
 
       function refreshControllerTempData() {
+
+        // get temp data startDate and endDate from model when this car park has 
+        // been booked before
         if(scope.model.booking.startDate !== null && scope.model.booking.endDate !== null) {
 
           // refresh back to its data by model
@@ -133,10 +135,9 @@
 
       function refreshControllerView() {
         
-        // configure booking hours if it exist
+        // if user has booked this carPark
+        // booking panel will not show
         if(scope.model.booking.startDate !== null && scope.model.booking.endDate !== null) {
-
-          // show your booking panel
           scope.view.showBookingPanel = false;
         } else {
 
@@ -159,7 +160,7 @@
           // big panel 
           showPanel : false,
 
-          // configure change hours for client
+          // change/inititate booking timer panel
           showBookingTimer : false,
 
           // it will show when user has not booked this carpark before

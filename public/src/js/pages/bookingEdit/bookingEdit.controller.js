@@ -73,6 +73,9 @@
         // remove car park booking model
         vm.model.booking.startDate = null;
         vm.model.booking.endDate = null;
+
+        // when booked carpark has been removed from user,
+        // add +1 to cars_available
         vm.model.cars_available += 1;
 
         // go back to booking state

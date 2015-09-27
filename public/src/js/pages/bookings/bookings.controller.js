@@ -13,6 +13,9 @@
     //------------------
     function getBookingList() {
       return _.reduce(appData.model, function reduce(bookingList, carPark, key) {
+
+        // use startDate and endData in carPark list to indicate whether this carPark has
+        // been booked or not
         if(carPark.booking.startDate !== null && carPark.booking.endDate !== null) {
           bookingList.push(carPark);
         }

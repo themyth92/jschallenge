@@ -4,7 +4,8 @@
     'app.core',
 
     'components.bookingTimer',
-    'services.util',
-    'components.carParkRemoveModal'
+    'components.carParkRemoveModal',
+
+    'services.util'
   ]);
 })(angular);
